@@ -18,12 +18,50 @@ code {
 
 @layer components {
   .btn-primary {
-    @apply cursor-pointer px-4 py-1 rounded-md font-medium text-white bg-gradient-to-b from-blue-secondary to-blue-primary active:from-blue-primary active:to-blue-secondary;
+    @apply px-4 py-1 font-medium text-white rounded-md cursor-pointer bg-gradient-to-b from-blue-secondary to-blue-primary active:from-blue-primary active:to-blue-secondary;
   }
   .btn-secondary {
-    @apply cursor-pointer px-4 py-1 rounded-md font-medium text-black bg-transparent border border-white-brd hover:bg-black hover:bg-opacity-5 active:bg-opacity-10;
+    @apply px-4 py-1 font-medium transition-all duration-200 bg-transparent border rounded-md cursor-pointer text-blue-primary border-blue-primary hover:bg-blue-primary hover:bg-opacity-5 active:bg-opacity-30;
   }
   .input-primary {
-    @apply px-2 py-1 w-full border rounded-md border-white-brd;
+    @apply w-full px-2 py-1 border rounded-md border-white-brd;
+  }
+}
+
+@layer utilities {
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: 2px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
