@@ -15,3 +15,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@layer components {
+  .btn-primary {
+    @apply cursor-pointer px-4 py-1 rounded-md font-medium text-white bg-gradient-to-b from-blue-secondary to-blue-primary active:from-blue-primary active:to-blue-secondary;
+  }
+  .btn-secondary {
+    @apply cursor-pointer px-4 py-1 rounded-md font-medium text-black bg-transparent border border-white-brd hover:bg-black hover:bg-opacity-5 active:bg-opacity-10;
+  }
+  .input-primary {
+    @apply px-2 py-1 w-full border rounded-md border-white-brd;
+  }
+}
