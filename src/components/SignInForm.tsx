@@ -38,6 +38,7 @@ const SignInForm: React.FC = () => {
         type="text"
         name="email"
         id="email"
+        defaultValue={"account@todos.com"}
         autoComplete="email"
         autoFocus={true}
         className="input-primary"
@@ -54,6 +55,7 @@ const SignInForm: React.FC = () => {
         type="password"
         name="password"
         id="password"
+        defaultValue={"trung1234"}
         autoComplete="current-password"
         autoFocus={true}
         className="input-primary"
