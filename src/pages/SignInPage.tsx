@@ -8,9 +8,9 @@ const SignInPage: React.FC = () => {
   const dispatch = useDispatch<Dispatch>();
 
   React.useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (user) {
-      dispatch.auth.setUser(JSON.parse(user));
+    const auth = localStorage.getItem("auth");
+    if (auth) {
+      dispatch.auth.setUser(JSON.parse(auth).user);
     }
   }, [dispatch.auth]);
 

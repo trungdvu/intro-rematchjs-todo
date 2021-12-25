@@ -8,6 +8,15 @@ export interface User {
   updatedAt?: string;
 }
 
+export interface Todo {
+  _id: string;
+  description: string;
+  completed: boolean;
+  owner?: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 export type AuthResponse = {
   token: string;
   user: User;

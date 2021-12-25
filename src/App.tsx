@@ -13,7 +13,7 @@ import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   const auth = useSelector(authSelector);
-  console.log(`auth`, auth);
+
   return (
     <main className="text-center">
       <Router>

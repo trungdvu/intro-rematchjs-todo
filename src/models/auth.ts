@@ -1,7 +1,7 @@
 import { createModel } from "@rematch/core";
 import { RootModel } from ".";
 import { User } from "../helpers/types";
-import { signIn, signOut, signUp } from "../services/auth.service";
+import { signIn, signOut, signUp } from "../services/services";
 
 type AuthType = {
   currentUser?: User;
@@ -31,7 +31,8 @@ export const auth = createModel<RootModel>()({
       typeof data === "string" ? this.setError(data) : this.setUser(data.user);
     },
     async signOutAsync() {
-      this.setUser(null);
+      this.setUser(undefined);
+      dispatch.todos.setTodos([]);
       signOut();
     },
   }),

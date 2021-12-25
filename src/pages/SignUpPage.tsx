@@ -8,9 +8,9 @@ const SignUpPage: React.FC = () => {
   const dispatch = useDispatch<Dispatch>();
 
   React.useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (user) {
-      dispatch.auth.setUser(JSON.parse(user));
+    const auth = localStorage.getItem("auth");
+    if (auth) {
+      dispatch.auth.setUser(JSON.parse(auth).user);
     }
   }, [dispatch.auth]);
 
@@ -21,9 +21,9 @@ const SignUpPage: React.FC = () => {
         <span className="text-[#27abe2] text-4xl font-thin">todos</span> account
       </h3>
       <SignUpForm />
-      <div className="text-left border border-#[d8dee4] px-6 py-3 w-[320px] rounded-md mt-4">
+      <div className="text-left border border-white-brd px-6 py-3 w-[320px] rounded-md mt-4">
         Already have an acoount?{" "}
-        <Link to={"/signin"} className="text-[#27abe2] hover:underline">
+        <Link to={"/signin"} className="text-blue-primary hover:underline">
           <br />
           Sign in now.
         </Link>
