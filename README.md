@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Demo
+
+On Netlify [https://intro-rematchjs-todo.netlify.app/](https://intro-rematchjs-todo.netlify.app/)
+
+## API
+
+Public RESTful todo list API [https://documenter.getpostman.com/view/8858534/SW7dX7JG](https://documenter.getpostman.com/view/8858534/SW7dX7JG)
+
 ## Available Scripts
 
 In the project directory, you can run:
