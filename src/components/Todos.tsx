@@ -27,9 +27,9 @@ const Todos: React.FC<TodosProps> = (props) => {
     <>
       <ul className="flex flex-col items-center bg-blue-primary">
         {loading.effects.todos.addTodoAsync && (
-          <span className="mt-6">
+          <div className="w-full h-[93px] border-b border-blue-secondary flex items-center justify-center">
             <LoadingSpin />
-          </span>
+          </div>
         )}
         {realTodosToDisplay.map((todo) => (
           <Todo key={todo._id} todo={todo} />

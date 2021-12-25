@@ -29,7 +29,7 @@ const AddTodoForm = () => {
           disabled={!auth.currentUser || !todo}
           value={"Add"}
           type="submit"
-          className="btn-secondary disabled:opacity-30"
+          className="btn-secondary"
         />
       </form>
       {!auth.currentUser && (

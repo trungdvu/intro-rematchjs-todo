@@ -28,7 +28,11 @@ const StatusBar: React.FC<StatusBarProps> = (props) => {
     <div className="flex flex-col items-center text-white">
       <div className="flex items-center justify-between w-full px-6 py-2 border-b bg-blue-primary border-blue-secondary">
         <p className="min-w-[100px] text-left">{leftTodosFormat()}</p>
-        <ul className="flex items-center gap-1">
+        <ul
+          className={classNames("flex items-center gap-1", {
+            hidden: props.todos.length === 0,
+          })}
+        >
           <button
             onClick={() => props.setDisplay("all")}
             className={displayButtonClasses("all")}
@@ -48,7 +52,12 @@ const StatusBar: React.FC<StatusBarProps> = (props) => {
             Completed
           </button>
         </ul>
-        <button onClick={handleClearCompleted} className="hover:underline">
+        <button
+          onClick={handleClearCompleted}
+          className={classNames("hover:underline", {
+            hidden: props.todos.length === 0,
+          })}
+        >
           Clear completed
         </button>
       </div>

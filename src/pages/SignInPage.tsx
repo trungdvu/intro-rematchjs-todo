@@ -18,7 +18,10 @@ const SignInPage: React.FC = () => {
     <div className="flex flex-col items-center min-h-screen">
       <h3 className="text-2xl mt-[5%]">
         Sign in to{" "}
-        <span className="text-[#27abe2] text-4xl font-thin">todos</span>
+        <span className="text-3xl font-thin text-blue-primary">
+          <span className="font-medium text-black">Rematch</span>
+          todos
+        </span>
       </h3>
       <SignInForm />
       <div className="text-left border border-white-brd px-6 py-3 w-[320px] rounded-md mt-4">

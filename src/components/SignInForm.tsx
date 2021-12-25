@@ -65,7 +65,7 @@ const SignInForm: React.FC = () => {
       <button
         disabled={loading.effects.auth.signInAsync}
         type="submit"
-        className="flex items-center justify-center h-8 mt-3 text-center disabled:opacity-70 btn-primary"
+        className="flex items-center justify-center h-8 mt-3 text-center btn-primary"
       >
         {loading.effects.auth.signInAsync ? <LoadingSpin /> : "Sign in"}
       </button>

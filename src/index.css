@@ -17,11 +17,14 @@ code {
 }
 
 @layer components {
+  .btn {
+    @apply px-4 py-1 font-medium disabled:cursor-not-allowed disabled:opacity-30;
+  }
   .btn-primary {
-    @apply px-4 py-1 font-medium text-white rounded-md cursor-pointer bg-gradient-to-b from-blue-secondary to-blue-primary active:from-blue-primary active:to-blue-secondary focus:from-blue-primary focus:to-blue-secondary;
+    @apply text-white rounded-md cursor-pointer btn bg-gradient-to-b from-blue-secondary to-blue-primary active:from-blue-primary active:to-blue-secondary focus:from-blue-primary focus:to-blue-secondary;
   }
   .btn-secondary {
-    @apply px-4 py-1 font-medium transition-all duration-150 bg-transparent border rounded-md cursor-pointer text-blue-primary border-blue-primary hover:bg-blue-primary hover:bg-opacity-5 active:bg-opacity-30 focus:bg-opacity-30;
+    @apply transition-all duration-150 bg-transparent border rounded-md cursor-pointer btn text-blue-primary border-blue-primary hover:bg-blue-primary hover:bg-opacity-5 active:bg-opacity-30 focus:bg-opacity-30;
   }
   .input-primary {
     @apply w-full px-2 py-1 border rounded-md border-white-brd;

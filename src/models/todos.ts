@@ -47,9 +47,10 @@ export const todos = createModel<RootModel>()({
       this.setTodos(todos);
     },
     async deleteTodoAsync(payload: string) {
+      this.deleteTodo(payload);
       const success = await deleteTodo(payload);
-      if (success) {
-        this.deleteTodo(payload);
+      if (!success) {
+        alert("There's error when you delete that todo! Srr :)");
       }
     },
     async toggleTodoAsync(payload: Todo) {
