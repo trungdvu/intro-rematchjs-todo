@@ -1,15 +1,15 @@
-import { createModel } from "@rematch/core";
-import { RootModel } from ".";
-import { Todo } from "../helpers/types";
+import { createModel } from '@rematch/core';
+import { RootModel } from '.';
+import { Todo } from '../helpers/types';
 import {
   addTodo,
   deleteTodo,
   getTodos,
   updateTodo,
-} from "../services/services";
+} from '../services/services';
 
 export const todos = createModel<RootModel>()({
-  name: "todos",
+  name: 'todos',
   state: [] as Array<Todo>,
   selectors: (slice) => ({
     remainedTodos() {
@@ -63,8 +63,11 @@ export const todos = createModel<RootModel>()({
     clearCompleted(payload: Array<Todo>) {
       payload.forEach(async (todo) => {
         if (todo.completed) {
+          this.deleteTodo(todo._id);
           const success = await deleteTodo(todo._id);
-          success && this.deleteTodo(todo._id);
+          if (!success) {
+            alert("There's error when you delete that todo! Srr :)");
+          }
         }
       });
     },
